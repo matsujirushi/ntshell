@@ -1,0 +1,26 @@
+{
+  "name": "Natural Tiny Shell",
+  "version": "0.3.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matsujirushi/ntshell.git"
+  },
+  "authors": [
+    {
+      "name": "Shinichiro Nakamura"
+    },
+    {
+      "name": "MATSUOKA Takashi",
+      "email": "matsujirushi@live.jp",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": "*",
+  "build": {
+    "flags": [
+      "-Isrc"
+    ]
+  }
+}

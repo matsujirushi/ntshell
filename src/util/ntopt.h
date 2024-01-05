@@ -33,7 +33,7 @@
 #ifndef NTOPT_H
 #define NTOPT_H
 
-#include "ntconf.h"
+#include "../core/ntconf.h"
 
 /**
  * @brief The text maximum length.
