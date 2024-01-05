@@ -79,6 +79,7 @@ void ntshell_init(ntshell_t *p,
     NTSHELL_USER_CALLBACK func_callback,
     void *extobj);
 void ntshell_execute(ntshell_t *p);
+void ntshell_execute_nb(ntshell_t *p);
 void ntshell_set_prompt(ntshell_t *p, const char *prompt);
 void ntshell_version(int *major, int *minor, int *release);
 

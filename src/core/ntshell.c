@@ -635,6 +635,35 @@ void ntshell_execute(ntshell_t *p)
 }
 
 /**
+ * @brief Execute the NT-Shell. (non-blocking)
+ *
+ * @param p A pointer to the handler of the NT-Shell.
+ */
+void ntshell_execute_nb(ntshell_t *p)
+{
+    static int first = 1;
+
+    /*
+     * Check the initialization code.
+     */
+    if (p->initcode != INITCODE) {
+        return;
+    }
+
+    /*
+     * User input loop.
+     */
+    if (first)
+    {
+        PROMPT_WRITE(p);
+        first = 0;
+    }
+    unsigned char ch;
+    const int len = SERIAL_READ(p, (char *)&ch, sizeof(ch));
+    vtrecv_execute(&(p->vtrecv), &ch, len);
+}
+
+/**
  * @brief Set up the prompt of the NT-Shell.
  *
  * @param p A pointer to the handler of the NT-Shell.
